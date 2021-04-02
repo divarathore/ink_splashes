@@ -53,6 +53,7 @@ function showSplashes() {
     splashes.forEach((splash) => {
       
         var splashImage = document.createElement("img");
+        splashImage.classList.add("image")
         splashImage.src = splash.fields.images[0].url;
         document.querySelector(".game").append(splashImage);
     });
