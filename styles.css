@@ -1,0 +1,12 @@
+.game {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap:10px;
+    justify-content: space-between;
+    margin: 0 100px;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
