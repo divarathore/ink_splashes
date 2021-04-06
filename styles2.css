@@ -1,0 +1,35 @@
+a { 
+    display: inline-block;
+    font-size: 2rem;  
+    margin: 8px 70px;
+  }
+.card-face {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap:10px;
+    justify-content: space-between;
+    margin: 30px 70px;
+    width: 200px;
+    height: 200px;
+  }
+
+img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        margin: 2px 40px;
+    }
+    .game {
+        grid-template-columns: auto auto auto;
+        margin: 0 40px;
+    }
+    img {
+        width: 100px;
+        height: 100px;
+    }
+  }
