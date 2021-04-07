@@ -9,8 +9,8 @@ var base = new Airtable({ apiKey: "key3nWA9CZwUNk6l5"}).base("appIuBjIpRL9ij2YD"
 
 //  getting the collection base, select all the records
 //specify functions that will recieve data
-base("ink_splashes").select({}).eachPage(gotPageOfSplashes, gotAllSplashes);
-// base("ink_splashes").select({ maxRecords: maxSplashes, view: "18" }).eachPage(gotPageOfSplashes, gotAllSplashes);
+// base("ink_splashes").select({}).eachPage(gotPageOfSplashes, gotAllSplashes);
+base("ink_splashes").select({ maxRecords: 9 }).eachPage(gotPageOfSplashes, gotAllSplashes);
 
 //an empty array to hold our data
  var splashes = [];
@@ -53,16 +53,48 @@ function showSplashes() {
     console.log("showSplashes()");
     splashes.forEach((splash) => {
       
-        var splashImage = document.createElement("img");
-        splashImage.classList.add("front")
+      // <div class="card">
+      //       <div class="card-back card-face">
+
+      //       </div>
+      //       <div class="card-front card-face">
+      //           <div class="back"></div>
+      //       </div>
+      //   </div>
+
+        let card = document.createElement("div");
+        card.classList.add("card");
+        document.querySelector(".game").appendChild(card);
+
+        let cardBack = document.createElement("div");
+        cardBack.classList.add("card-back");
+        cardBack.classList.add("card-face");
+        card.appendChild(cardBack);
+
+        // let cardBack2 = document.createElement("div");
+        // cardBack2.classList.add("card-back");
+        // cardBack2.classList.add("card-face");
+        // card.appendChild(cardBack2);
+        
+        let cardFront = document.createElement("div");
+        cardFront.classList.add("card-front");
+        cardFront.classList.add("card-face");
+        card.appendChild(cardFront);
+        
+        let splashImage = document.createElement("img");
+        splashImage.classList.add("front");
+        // var random = Math.round(Math.random()*100);
         splashImage.src = splash.fields.images[0].url;
-        document.querySelector(".card-face").append(splashImage);
+        cardBack.appendChild(splashImage);
+        // cardBack.appendChild(splashImage.cloneNode(true));
+
+        let card1 = document.querySelectorAll(".card");
+        card1.forEach((item) => {
+        item.addEventListener( 'click', function() {
+        item.classList.toggle('is-flipped');
+        console.log('hello');
+        });
+        })
     });
   }
-  var card = document.querySelectorAll('.card');
-  card.forEach((item) => {
-    item.addEventListener( 'click', function() {
-    item.classList.toggle('is-flipped');
-      console.log('hello');
-  });
-  })
+  
