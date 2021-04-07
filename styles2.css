@@ -21,6 +21,8 @@ img {
 
 #footnote {
     text-decoration: none;
+    position: absolute;
+    bottom: 5vw;
 }
 
 @media (max-width: 480px) {

@@ -66,6 +66,10 @@ function showSplashes() {
         card.classList.add("card");
         document.querySelector(".game").appendChild(card);
 
+        let card2 = document.createElement("div");
+        card2.classList.add("card");
+        document.querySelector(".game").appendChild(card2);
+
         let cardBack = document.createElement("div");
         cardBack.classList.add("card-back");
         cardBack.classList.add("card-face");
@@ -86,15 +90,14 @@ function showSplashes() {
         // var random = Math.round(Math.random()*100);
         splashImage.src = splash.fields.images[0].url;
         cardBack.appendChild(splashImage);
-        // cardBack.appendChild(splashImage.cloneNode(true));
-
+        cardBack.appendChild(splashImage.cloneNode(true));
+      });
         let card1 = document.querySelectorAll(".card");
         card1.forEach((item) => {
-        item.addEventListener( 'click', function() {
+        item.addEventListener( 'mousedown', function() {
         item.classList.toggle('is-flipped');
         console.log('hello');
         });
-        })
-    });
+      })
   }
   
