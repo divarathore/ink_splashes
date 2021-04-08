@@ -20,9 +20,9 @@ img {
 }
 
 #footnote {
-    text-decoration: none;
-    position: absolute;
-    bottom: 5vw;
+    display: block;
+    text-align: right;
+    margin-top: -35px;
 }
 
 @media (max-width: 480px) {

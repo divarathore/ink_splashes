@@ -75,22 +75,27 @@ function showSplashes() {
         cardBack.classList.add("card-face");
         card.appendChild(cardBack);
 
-        // let cardBack2 = document.createElement("div");
-        // cardBack2.classList.add("card-back");
-        // cardBack2.classList.add("card-face");
-        // card.appendChild(cardBack2);
+        let cardBack2 = document.createElement("div");
+        cardBack2.classList.add("card-back");
+        cardBack2.classList.add("card-face");
+        card2.appendChild(cardBack2);
         
         let cardFront = document.createElement("div");
         cardFront.classList.add("card-front");
         cardFront.classList.add("card-face");
         card.appendChild(cardFront);
+
+        let cardFront2 = document.createElement("div");
+        cardFront2.classList.add("card-front");
+        cardFront2.classList.add("card-face");
+        card2.appendChild(cardFront2);
         
         let splashImage = document.createElement("img");
         splashImage.classList.add("front");
         // var random = Math.round(Math.random()*100);
         splashImage.src = splash.fields.images[0].url;
         cardBack.appendChild(splashImage);
-        cardBack.appendChild(splashImage.cloneNode(true));
+        cardBack2.appendChild(splashImage.cloneNode(true));
       });
         let card1 = document.querySelectorAll(".card");
         card1.forEach((item) => {
