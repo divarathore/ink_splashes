@@ -99,7 +99,7 @@ function showSplashes() {
       });
         let card1 = document.querySelectorAll(".card");
         card1.forEach((item) => {
-        item.addEventListener( 'mousedown', function() {
+        item.addEventListener( 'click', function() {
         item.classList.toggle('is-flipped');
         console.log('hello');
         });

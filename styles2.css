@@ -1,7 +1,10 @@
 a { 
-    /* display: grid; */
+    display: inline-block;
     font-size: 2rem;  
     margin: 8px 70px;
+    font-family: pauline,sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 .card-face {
     display: grid;
@@ -19,19 +22,20 @@ img {
     border: 1px solid black;
 }
 
-#footnote {
+/* #footnote {
     display: block;
     text-align: right;
-    margin-top: -35px;
-}
+    margin-top: -46px;
+} */
 
 @media (max-width: 480px) {
     a {
-        margin: 2px 40px;
+        font-size: 1rem;
+        margin: 10px 45px;
     }
     .card-face {
         grid-template-columns: auto auto auto;
-        margin: 0 40px;
+        margin: 0 45px;
     }
     img {
         width: 100px;
