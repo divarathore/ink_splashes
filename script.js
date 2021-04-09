@@ -4,14 +4,14 @@
 var Airtable = require("airtable");
 // console.log(Airtable);
 //setting the max record so that it loads faster and doesnt load all images when its not needed.
-var max = 10; 
+// var max = 10; 
 //API key
 var base = new Airtable({ apiKey: "key3nWA9CZwUNk6l5"}).base("appIuBjIpRL9ij2YD");
 
 //  getting the collection base, select all the records
 //specify functions that will recieve data
 // base("ink_splashes").select({}).eachPage(gotPageOfSplashes, gotAllSplashes);
-base("ink_splashes").select({ maxRecords: max+10 }).eachPage(gotPageOfSplashes, gotAllSplashes);
+base("ink_splashes").select({}).eachPage(gotPageOfSplashes, gotAllSplashes);
 
 //an empty array to hold our data
  var splashes = [];
@@ -52,7 +52,9 @@ function consoleLogSplashes() {
 // loop through our airtable data, create elements (getting all the images on the page!)
 function showSplashes() {
     console.log("showSplashes()");
-    splashes.forEach((splash) => {
+    const randomStartPosition = Math.round(Math.random() * (splashes.length - 10));
+    const slicedSplashes = splashes.slice(randomStartPosition, randomStartPosition + 9);
+    slicedSplashes.forEach((splash) => {
       
       // <div class="card">
       //       <div class="card-back card-face">
@@ -65,6 +67,7 @@ function showSplashes() {
 
         let card = document.createElement("div");
         card.classList.add("card");
+        // card.style.order = `${Math.round(Math.random() * (splashes.length - 1))}`;
         document.querySelector(".game").appendChild(card);
 
         let card2 = document.createElement("div");
@@ -93,11 +96,11 @@ function showSplashes() {
         
         let splashImage = document.createElement("img");
         splashImage.classList.add("front");
-        var random = Math.round(Math.random()*splashes.length);
+        var random = Math.round(Math.random()*slicedSplashes.length);
         // var random = Math.round(Math.random()*max);
-        console.log(random);
+        // console.log(random);
         // splashImage.src = splash.fields.images[0].url;
-        splashImage.src = splashes[random].fields.images[0].url;
+        splashImage.src = slicedSplashes[random].fields.images[0].url;
         cardBack.appendChild(splashImage);
         cardBack2.appendChild(splashImage.cloneNode(true));
       });
