@@ -1,25 +1,36 @@
+body {
+    height: 4760px;
+}
 a { 
     display: inline-block;
     font-size: 2rem;  
-    margin: 8px 70px;
+    margin: 35px 150px 0;
     font-family: pauline,sans-serif;
     font-weight: 400;
     font-style: normal;
+    text-decoration: none;
+    color: black;
   }
-.card-face {
+.game {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    grid-gap:10px;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap:20px;
     justify-content: space-between;
-    margin: 0px 70px;
+    margin: 70px 150px;
     width: 200px;
     height: 200px;
   }
-
 img {
     width: 200px;
     height: 200px;
     border: 1px solid black;
+    box-shadow: 5px 5px 5px grey;
+    transition: 0.4s ease-out;
+}
+
+img:active {
+    transform: scale(2);
+    transition: 0.8s;
 }
 
 /* #footnote {

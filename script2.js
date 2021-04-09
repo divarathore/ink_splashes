@@ -52,11 +52,16 @@ function consoleLogSplashes() {
 function showSplashes() {
     console.log("showSplashes()");
     splashes.forEach((splash) => {
+
+        let card = document.createElement("div");
+        card.classList.add(".card-face");
+        document.querySelector(".game").appendChild(card);
       
         var splashImage = document.createElement("img");
         splashImage.classList.add("front")
         splashImage.src = splash.fields.images[0].url;
-        document.querySelector(".card-face").append(splashImage);
+        card.appendChild(splashImage);
+        // document.querySelector(".card-face").append(splashImage);
     });
   }
   var card = document.querySelectorAll('.card');

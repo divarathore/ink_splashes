@@ -3,14 +3,15 @@
 //loading the airtable library
 var Airtable = require("airtable");
 // console.log(Airtable);
-
+//setting the max record so that it loads faster and doesnt load all images when its not needed.
+var max = 10; 
 //API key
 var base = new Airtable({ apiKey: "key3nWA9CZwUNk6l5"}).base("appIuBjIpRL9ij2YD");
 
 //  getting the collection base, select all the records
 //specify functions that will recieve data
 // base("ink_splashes").select({}).eachPage(gotPageOfSplashes, gotAllSplashes);
-base("ink_splashes").select({ maxRecords: 9 }).eachPage(gotPageOfSplashes, gotAllSplashes);
+base("ink_splashes").select({ maxRecords: max+10 }).eachPage(gotPageOfSplashes, gotAllSplashes);
 
 //an empty array to hold our data
  var splashes = [];
@@ -92,8 +93,11 @@ function showSplashes() {
         
         let splashImage = document.createElement("img");
         splashImage.classList.add("front");
-        // var random = Math.round(Math.random()*100);
-        splashImage.src = splash.fields.images[0].url;
+        var random = Math.round(Math.random()*splashes.length);
+        // var random = Math.round(Math.random()*max);
+        console.log(random);
+        // splashImage.src = splash.fields.images[0].url;
+        splashImage.src = splashes[random].fields.images[0].url;
         cardBack.appendChild(splashImage);
         cardBack2.appendChild(splashImage.cloneNode(true));
       });
@@ -104,5 +108,6 @@ function showSplashes() {
         console.log('hello');
         });
       })
-  }
+}
   
+
