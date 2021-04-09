@@ -127,11 +127,11 @@ function showSplashes() {
           });
 
           // animation
-          setTimeout(() => {
-            flippedCards.forEach((card) => {
+          flippedCards.forEach((card) => {
+            setTimeout(() => {
               card.classList.toggle('is-flipped');
-            });
-          }, 1000);
+            }, 1000);
+          });
         }
       });
     });
