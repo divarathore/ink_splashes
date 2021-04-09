@@ -54,6 +54,7 @@ function showSplashes() {
     console.log("showSplashes()");
     const randomStartPosition = Math.round(Math.random() * (splashes.length - 10));
     const slicedSplashes = splashes.slice(randomStartPosition, randomStartPosition + 9);
+
     slicedSplashes.forEach((splash) => {
       
       // <div class="card">
@@ -67,7 +68,7 @@ function showSplashes() {
 
         let card = document.createElement("div");
         card.classList.add("card");
-        // card.style.order = `${Math.round(Math.random() * (splashes.length - 1))}`;
+        card.style.order = `${Math.round(Math.random() * (splashes.length - 1))}`;
         document.querySelector(".game").appendChild(card);
 
         let card2 = document.createElement("div");
@@ -96,21 +97,39 @@ function showSplashes() {
         
         let splashImage = document.createElement("img");
         splashImage.classList.add("front");
-        var random = Math.round(Math.random()*slicedSplashes.length);
-        // var random = Math.round(Math.random()*max);
-        // console.log(random);
-        // splashImage.src = splash.fields.images[0].url;
-        splashImage.src = slicedSplashes[random].fields.images[0].url;
+        splashImage.src = splash.fields.images[0].url;
         cardBack.appendChild(splashImage);
         cardBack2.appendChild(splashImage.cloneNode(true));
       });
-        let card1 = document.querySelectorAll(".card");
-        card1.forEach((item) => {
-        item.addEventListener( 'click', function() {
-        item.classList.toggle('is-flipped');
-        console.log('hello');
-        });
-      })
-}
-  
 
+      let card1 = document.querySelectorAll(".card");
+      card1.forEach((item) => {
+      item.addEventListener( 'click', function() {
+      item.classList.toggle('is-flipped'); 
+      item.classList.toggle('state-flipped'); // programmatically determined state
+
+      const flippedCards = document.querySelectorAll('.state-flipped');
+      if (flippedCards.length >= 2) {
+        if (flippedCards[0].querySelector('img').src === flippedCards[1].querySelector('img').src) {
+          console.log('you win');
+          flippedCards.forEach((card) => {
+            card.style.opacity = '0';
+          });
+        } else {
+          console.log('you lose');
+        }
+
+        flippedCards.forEach((card) => {
+          card.classList.toggle('state-flipped');
+        });
+
+        // animation
+        setTimeout(() => {
+          flippedCards.forEach((card) => {
+            card.classList.toggle('is-flipped');
+          });
+        }, 1000);
+      }
+    });
+  });
+}
