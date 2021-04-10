@@ -43,38 +43,11 @@ button {
   }
   .card.is-flipped {
     transform: translateX(-100%) rotateY(-180deg);
-    /* animation-name: slidein;
-    animation-iteration-count: infinite; */
   }
-  /* @keyframes slidein {
-    0% {
-      margin-left: 50%;
+  .shift-to-center{
+    top:var(--top);
+    left:var(--left);
     }
-    0% {
-      margin-left: 100%;
-    }
-    50% {
-      margin-left: 50%;
-    }
-  } */
-/* .card.is-flipped.matched {
-  animation: match 500ms ease-out;
-  transform: translateY(30) translateX(70);
-} */
-/* @keyframes match {
-  0% {
-  transform: rotateY(270deg) translateZ(-15px);
-  }
-  50% {
-  transform: rotateY(270deg) translateZ(10px);
-  }
-  100% {
-  transform: rotateY(270deg) translateZ(0);
-  }
-  } */
-  /* .card&.flipped&.matched {
-    animation: match 500ms ease-out
-    } */
   .card-face {
     position: absolute;
     width: 100%;

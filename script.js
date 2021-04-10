@@ -114,14 +114,25 @@ function showSplashes() {
           console.log('you win');
           flippedCards.forEach((card) => {
             setTimeout(() => {
-              // flippedCards[0].classList.add('matched')
-              // flippedCards[1].classList.add('matched')
-              flippedCards.forEach((card) => {
-                card.style.opacity = '0';
-                // .card.is-flipped.matched {
-                //   animation: match 500ms ease-out
-                // }
-              });
+              var horizontalCenter=document.querySelector('.game').getBoundingClientRect().left + 625;
+                var verticalCenter=document.querySelector('.game').getBoundingClientRect().top + 310;
+                if(window.matchMedia("(max-width:480px)").matches){
+                    var halfWidth=100;
+                    var halfHeight=300;
+                    }else{
+                    var halfWidth=625;
+                    var halfHeight=310;
+                    }
+  
+                flippedCards.forEach((card) => {
+                  var top=card.getBoundingClientRect().top;
+                  var left=card.getBoundingClientRect().left;
+                  var horizontalDistance=horizontalCenter - left;
+                  var verticalDistance=verticalCenter - top;
+                  card.style.setProperty('--top', `${verticalDistance}px`);
+                  card.style.setProperty('--left', `${horizontalDistance}px`);
+                  });
+                
             }, 1000);
           });
         } else {
