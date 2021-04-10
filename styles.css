@@ -40,6 +40,9 @@ button {
     transform-style: preserve-3d;
     transform-origin: center right;
     transition: transform 1s;
+    left:0px;
+    top:0px;
+    z-index:1
   }
   .card.is-flipped {
     transform: translateX(-100%) rotateY(-180deg);
