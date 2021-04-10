@@ -112,8 +112,6 @@ function showSplashes() {
       if (flippedCards.length >= 2) {
         if (flippedCards[0].querySelector('img').src === flippedCards[1].querySelector('img').src) {
           console.log('you win');
-          flippedCards.forEach((card) => {
-            setTimeout(() => {
               var horizontalCenter=document.querySelector('.game').getBoundingClientRect().left + 625;
                 var verticalCenter=document.querySelector('.game').getBoundingClientRect().top + 310;
                 if(window.matchMedia("(max-width:480px)").matches){
@@ -123,19 +121,24 @@ function showSplashes() {
                     var halfWidth=625;
                     var halfHeight=310;
                     }
+                    console.log(horizontalCenter)
+                    console.log(verticalCenter)
   
-                flippedCards.forEach((card) => {
-                  card.classList.add("shift-to-center")
-                  var top=card.getBoundingClientRect().top;
-                  var left=card.getBoundingClientRect().left;
-                  var horizontalDistance=horizontalCenter - left;
-                  var verticalDistance=verticalCenter - top;
-                  card.style.setProperty('--top', `${verticalDistance}px`);
-                  card.style.setProperty('--left', `${horizontalDistance}px`);
-                  });
+                    flippedCards.forEach((card,i) => {
+                      var top=card.getBoundingClientRect().top;
+                      var left=card.getBoundingClientRect().left;
+                      console.log("top:",top,"left:",left);
+                      var horizontalDistance=horizontalCenter - left;
+                      var verticalDistance=verticalCenter - top;
+                      console.log("horizontal:",horizontalDistance,"verical:",horizontalDistance);
+                      card.style.setProperty('--top', `${verticalDistance}px`);
+                      card.style.setProperty('--left', `${horizontalDistance}px`);
+                       card.classList.add("shift-to-center");
+                       if(i==0){
+                        card.classList.add("shift-left")
+                        }
+                      });
                 
-            }, 1000);
-          });
         } else {
           console.log('you lose');
         }

@@ -47,7 +47,12 @@ button {
   .shift-to-center{
     top:var(--top);
     left:var(--left);
+    transform:translateY(-50%);
+    z-index:10
     }
+    .shift-to-center.shift-left{
+      transform:translate(-100%,-50%);
+      }
   .card-face {
     position: absolute;
     width: 100%;
