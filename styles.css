@@ -57,6 +57,24 @@ button {
       margin-left: 50%;
     }
   } */
+/* .card.is-flipped.matched {
+  animation: match 500ms ease-out;
+  transform: translateY(30) translateX(70);
+} */
+/* @keyframes match {
+  0% {
+  transform: rotateY(270deg) translateZ(-15px);
+  }
+  50% {
+  transform: rotateY(270deg) translateZ(10px);
+  }
+  100% {
+  transform: rotateY(270deg) translateZ(0);
+  }
+  } */
+  /* .card&.flipped&.matched {
+    animation: match 500ms ease-out
+    } */
   .card-face {
     position: absolute;
     width: 100%;
@@ -82,6 +100,9 @@ button {
       font-size: 1rem;
       margin: 10px 45px;
   }
+    button {
+      font-size: 1rem;
+    }
     .game {
       grid-template-columns: auto auto auto;
       margin: 0 45px;

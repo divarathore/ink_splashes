@@ -114,8 +114,13 @@ function showSplashes() {
           console.log('you win');
           flippedCards.forEach((card) => {
             setTimeout(() => {
+              // flippedCards[0].classList.add('matched')
+              // flippedCards[1].classList.add('matched')
               flippedCards.forEach((card) => {
                 card.style.opacity = '0';
+                // .card.is-flipped.matched {
+                //   animation: match 500ms ease-out
+                // }
               });
             }, 1000);
           });
