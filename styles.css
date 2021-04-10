@@ -47,7 +47,7 @@ button {
   .card.is-flipped {
     transform: translateX(-100%) rotateY(-180deg);
   }
-  .is-flipped.shift-to-center {
+  .is-flipped.shift-to-center, .shift-to-center {
     top:var(--top);
     left:var(--left);
     transform: translate(-100%, -50%) rotateY(-180deg);
@@ -56,6 +56,7 @@ button {
     .shift-to-center.shift-left{
       transform: translate(-200%, -50%) rotateY(-180deg);
       }
+  
   .card-face {
     position: absolute;
     width: 100%;
