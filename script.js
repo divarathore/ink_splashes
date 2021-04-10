@@ -138,6 +138,11 @@ function showSplashes() {
                         card.classList.add("shift-left")
                         }
                       });
+                      setTimeout(() => {
+                        flippedCards.forEach((card) => {
+                          card.style.opacity = '0';
+                        });
+                      }, 2000);
                 
         } else {
           console.log('you lose');
