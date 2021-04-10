@@ -50,11 +50,11 @@ button {
   .is-flipped.shift-to-center {
     top:var(--top);
     left:var(--left);
-    transform:translateY(-50%) rotateY(-180deg);
+    transform: translate(-100%, -50%) rotateY(-180deg);
     z-index:10
     }
     .shift-to-center.shift-left{
-      transform:translate(-100%,-50%) rotateY(-180deg);
+      transform: translate(-200%, -50%) rotateY(-180deg);
       }
   .card-face {
     position: absolute;
