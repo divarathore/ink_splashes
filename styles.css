@@ -39,7 +39,7 @@ button {
     cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center right;
-    transition: transform 1s;
+    transition: transform 1s, top 1s, left 1s;
     left:0px;
     top:0px;
     z-index:1
