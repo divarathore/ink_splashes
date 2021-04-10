@@ -113,7 +113,11 @@ function showSplashes() {
         if (flippedCards[0].querySelector('img').src === flippedCards[1].querySelector('img').src) {
           console.log('you win');
           flippedCards.forEach((card) => {
-            card.style.opacity = '0';
+            setTimeout(() => {
+              flippedCards.forEach((card) => {
+                card.style.opacity = '0';
+              });
+            }, 1000);
           });
         } else {
           console.log('you lose');

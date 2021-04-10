@@ -9,6 +9,17 @@ a {
   text-decoration: none;
   color: black;
 }
+button {
+  display: inline-block;
+  font-size: 2rem; 
+  font-family: pauline,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  border-color: white;
+  background-color: white;
+  border: 0;
+}
 .game {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
@@ -32,7 +43,20 @@ a {
   }
   .card.is-flipped {
     transform: translateX(-100%) rotateY(-180deg);
+    /* animation-name: slidein;
+    animation-iteration-count: infinite; */
   }
+  /* @keyframes slidein {
+    0% {
+      margin-left: 50%;
+    }
+    0% {
+      margin-left: 100%;
+    }
+    50% {
+      margin-left: 50%;
+    }
+  } */
   .card-face {
     position: absolute;
     width: 100%;
@@ -71,3 +95,5 @@ a {
       height: 100px;
   }
   }
+
+  
