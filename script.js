@@ -125,6 +125,7 @@ function showSplashes() {
                     }
   
                 flippedCards.forEach((card) => {
+                  card.classList.add("shift-to-center")
                   var top=card.getBoundingClientRect().top;
                   var left=card.getBoundingClientRect().left;
                   var horizontalDistance=horizontalCenter - left;
