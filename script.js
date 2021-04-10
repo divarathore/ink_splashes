@@ -141,18 +141,18 @@ function showSplashes() {
                 
         } else {
           console.log('you lose');
-          flippedCards.forEach((card) => {
-            card.classList.toggle('state-flipped');
-          });
-  
-          // animation
-          setTimeout(() => {
-            flippedCards.forEach((card) => {
-              card.classList.toggle('is-flipped');
-            });
-          }, 1000);
         }
 
+        flippedCards.forEach((card) => {
+          card.classList.toggle('state-flipped');
+        });
+
+        // animation
+        setTimeout(() => {
+          flippedCards.forEach((card) => {
+            card.classList.toggle('is-flipped');
+          });
+        }, 1000);
         
       }
     });
