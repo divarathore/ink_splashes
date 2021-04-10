@@ -51,10 +51,14 @@ button {
     top:var(--top);
     left:var(--left);
     transform: translate(-100%, -50%) rotateY(-180deg);
+    -webkit-transform: translate(-100%, -50%) rotateY(-180deg) translate3d(0,0,200px);
     z-index:10
+    
+    
     }
     .shift-to-center.shift-left{
       transform: translate(-200%, -50%) rotateY(-180deg);
+      -webkit-transform: translate(-200%, -50%) rotateY(-180deg) translate3d(0,0,200px);;
       }
   
   .card-face {
