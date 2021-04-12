@@ -43,7 +43,7 @@ function gotAllSplashes(err) {
 // just loop through the books and console.log them
 function consoleLogSplashes() {
     console.log("consoleLogSplashes()");
-    splashes.forEach((splash) => {
+    splashes.forEach((splash) => { 
       console.log("Splash:", splash);
     });
   }
@@ -70,4 +70,31 @@ function showSplashes() {
     item.classList.toggle('is-flipped');
       console.log('hello');
   });
-  })
+  });
+
+// document.querySelector("body").onclick = function(){
+
+//   console.log('hello');
+//   document.querySelector("img").style.transform = "scale(2)";
+  // document.getElementsByClassName(".front").style.transform = 'scale(2)';
+  // document.getElementsByClassName(".front").style.transition = '0.8';
+  
+// }
+// document.addEventListener("body").onclick = function(){
+//   var element = document.querySelector(".front");
+//   element.classList.toggle("mystyle");
+//   console.log('img clicked')
+// }
+// var image =  document.querySelector('.front');
+
+// function mouseOver() {
+//     image.style.height="600px";
+// }
+
+// image.onclick = mouseOver;
+
+var test = document.getElementsByClassName('.card-face');
+test.onclick = function myClickFunction() {
+  console.log('hello');
+  img.style.transform = scale(2);
+}
