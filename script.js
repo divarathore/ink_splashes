@@ -112,8 +112,11 @@ function showSplashes() {
       if (flippedCards.length >= 2) {
         if (flippedCards[0].querySelector('img').src === flippedCards[1].querySelector('img').src) {
           console.log('you win');
-              var horizontalCenter=document.querySelector('.game').getBoundingClientRect().left + 625;
-                var verticalCenter=document.querySelector('.game').getBoundingClientRect().top + 310;
+              // var horizontalCenter=document.querySelector('.game').getBoundingClientRect().left + 625;
+              //   var verticalCenter=document.querySelector('.game').getBoundingClientRect().top + 310;
+              let game=document.querySelector('.game').getBoundingClientRect();
+              var horizontalCenter=game.left + game.width/2;
+                var verticalCenter=game.top +game.height/2;
                 if(window.matchMedia("(max-width:480px)").matches){
                     var halfWidth=100;
                     var halfHeight=300;

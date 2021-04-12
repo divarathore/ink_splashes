@@ -22,12 +22,14 @@ button {
 }
 .game {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: 200px 200px 200px 200px 200px 200px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap:10px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin: 0 70px;
-    width: 200px;
-    height: 200px;
+    /* width: 200px; */
+    /* height: 200px; */
   }
 
   .card {
@@ -94,7 +96,9 @@ button {
       font-size: 1rem;
     }
     .game {
-      grid-template-columns: auto auto auto;
+      grid-template-columns: 100px 100px 100px;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       margin: 0 45px;
     }
     img {
