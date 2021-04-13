@@ -131,11 +131,11 @@ function showSplashes() {
 //   }
 // }
 
-var test = document.getElementsByClassName('.card-face');
-test.onclick = function myClickFunction() {
-  console.log('hello');
-  img.style.transform = scale(2);
-}
+// var test = document.getElementsByClassName('.card-face');
+// test.onclick = function myClickFunction() {
+//   console.log('hello');
+//   img.style.transform = scale(2);
+// }
 // function onClick(element) {
 //   document.getElementsByClassName("front").src = element.src;
 //   // splashImage.classList.add("mystyle")
