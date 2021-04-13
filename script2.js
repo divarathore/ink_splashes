@@ -64,13 +64,15 @@ function showSplashes() {
         // document.querySelector(".card-face").append(splashImage);
     });
   }
-  var card = document.querySelectorAll('.card');
-  card.forEach((item) => {
-    item.addEventListener( 'click', function() {
-    item.classList.toggle('is-flipped');
-      console.log('hello');
-  });
-  });
+  // var card = document.querySelectorAll('img');
+  // card.forEach((item) => {
+
+  //   item.addEventListener( 'mouseDown', function() {
+  //     console.log('clickeddd');
+  //   item.classList.toggle('.front');
+  //     // console.log('hello');
+  // });
+  // });
 
 // document.querySelector("body").onclick = function(){
 
@@ -93,8 +95,49 @@ function showSplashes() {
 
 // image.onclick = mouseOver;
 
+// document.querySelector("body").onclick = function(){
+//   var element = document.getElementsByClassName(".front");
+//   element.classList.toggle(".mystyle");
+// }
+
+// document.querySelector("body").onclick = function(){
+//   var element = document.getElementsByClassName(".front");
+
+//   if (element.classList) { 
+//     element.classList.toggle("mystyle");
+//   } else {
+//     var classes = element.className.split(" ");
+//     var i = classes.indexOf("mystyle");
+
+//     if (i >= 0) 
+//       classes.splice(i, 1);
+//     else 
+//       classes.push("mystyle");
+//       element.className = classes.join(" "); 
+//   }
+// }
+
+// var tet = document.getElementsByClassName("card-face");
+// tet[0].classList.toggle("front");
+// var togg = document.getElementsByClassName("front");
+
+// function toggl() {
+//   tet[0].classList.toggle("front");
+// }
+// document.addEventListener("click", toggl);
+// function toggl () {
+//   for (var i = 0; i < two.length; i++) {
+//     tet[i].classList.toggle("front");
+//   }
+// }
+
 var test = document.getElementsByClassName('.card-face');
 test.onclick = function myClickFunction() {
   console.log('hello');
   img.style.transform = scale(2);
 }
+// function onClick(element) {
+//   document.getElementsByClassName("front").src = element.src;
+//   // splashImage.classList.add("mystyle")
+//   document.getElementsByClassName("front").style.transform = 'scale(2)';
+// }

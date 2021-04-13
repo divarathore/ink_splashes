@@ -1,5 +1,6 @@
 body {
     height: 4760px;
+    background-color: lightgrey;
 }
 a { 
     display: inline-block;
@@ -24,12 +25,12 @@ a {
 img {
     width: 200px;
     height: 200px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     box-shadow: 5px 5px 5px grey;
     transition: 0.4s ease-out;
 }
 
-img:active {
+.card-face.front {
     transform: scale(2); 
     transition: 0.8s;
 }
