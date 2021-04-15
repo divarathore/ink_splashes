@@ -53,19 +53,21 @@ function showSplashes() {
     console.log("showSplashes()");
     splashes.forEach((splash) => {
 
+      //creating a div to add the images in individual divs.
         let card = document.createElement("div");
         card.classList.add(".card-face");
         document.querySelector(".game").appendChild(card);
       
+        //adding the images to the divs.
         var splashImage = document.createElement("img");
         splashImage.classList.add("front");
         card.classList.add("open");
         splashImage.src = splash.fields.images[0].url;
         card.appendChild(splashImage);
-        // document.querySelector(".card-face").append(splashImage);
     });
   }
 
+  //adding a click event to scale up and down the images on the thumbnail page.
   document.querySelector('.game').addEventListener('click', (event) => {
     if (event.target.tagName === 'IMG') {
         event.target.classList.toggle('scale-up');

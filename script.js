@@ -57,12 +57,11 @@ function showSplashes() {
 
     slicedSplashes.forEach((splash) => {
       
+      // the code below is basically creating the html structure, like the one in the comment and the images go into the card-back class and each image gets duplicated as well.
       // <div class="card">
       //       <div class="card-back card-face">
-
       //       </div>
       //       <div class="card-front card-face">
-      //           <div class="back"></div>
       //       </div>
       //   </div>
 
@@ -73,7 +72,7 @@ function showSplashes() {
 
         let card2 = document.createElement("div");
         card2.classList.add("card");
-        document.querySelector(".game").appendChild(card2);
+        document.querySelector(".game").appendChild(card2);//duplicate
 
         let cardBack = document.createElement("div");
         cardBack.classList.add("card-back");
@@ -83,7 +82,7 @@ function showSplashes() {
         let cardBack2 = document.createElement("div");
         cardBack2.classList.add("card-back");
         cardBack2.classList.add("card-face");
-        card2.appendChild(cardBack2);
+        card2.appendChild(cardBack2);//duplicate
         
         let cardFront = document.createElement("div");
         cardFront.classList.add("card-front");
@@ -93,13 +92,13 @@ function showSplashes() {
         let cardFront2 = document.createElement("div");
         cardFront2.classList.add("card-front");
         cardFront2.classList.add("card-face");
-        card2.appendChild(cardFront2);
+        card2.appendChild(cardFront2);//duplicate
         
         let splashImage = document.createElement("img");
         splashImage.classList.add("front");
         splashImage.src = splash.fields.images[0].url;
         cardBack.appendChild(splashImage);
-        cardBack2.appendChild(splashImage.cloneNode(true));
+        cardBack2.appendChild(splashImage.cloneNode(true));//duplicate
       });
 
       let card1 = document.querySelectorAll(".card");
@@ -108,12 +107,11 @@ function showSplashes() {
       item.classList.toggle('is-flipped'); 
       item.classList.toggle('state-flipped'); // programmatically determined state
 
+      //animations, and telling when the card matches and adding in the animations to come to the center and mirror.
       const flippedCards = document.querySelectorAll('.state-flipped');
       if (flippedCards.length >= 2) {
         if (flippedCards[0].querySelector('img').src === flippedCards[1].querySelector('img').src) {
           console.log('you win');
-              // var horizontalCenter=document.querySelector('.game').getBoundingClientRect().left + 625;
-              //   var verticalCenter=document.querySelector('.game').getBoundingClientRect().top + 310;
               let game=document.querySelector('.game').getBoundingClientRect();
               var horizontalCenter=game.left + game.width/2;
                 var verticalCenter=game.top +game.height/2;

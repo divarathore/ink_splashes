@@ -1,10 +1,12 @@
+html{
+  background-color: whitesmoke;
+}
 a { 
   display: inline-block;
-  font-size: 2rem;  
-  /* margin: 8px 70px; */
+  font-size: 2rem;
   margin: 35px 70px 10px;
-  font-family: pauline,sans-serif;
-  font-weight: 400;
+  font-family: neue-haas-grotesk-display,sans-serif;
+  font-weight: 200;
   font-style: normal;
   text-decoration: none;
   color: black;
@@ -12,103 +14,93 @@ a {
 button {
   display: inline-block;
   font-size: 2rem; 
-  font-family: pauline,sans-serif;
-  font-weight: 400;
+  font-family: neue-haas-grotesk-display,sans-serif;
+  font-weight: 200;
   font-style: normal;
   text-decoration: none;
-  border-color: white;
-  background-color: white;
+  background-color: whitesmoke;
   border: 0;
 }
 .game {
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px 200px 200px;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap:10px;
-    /* justify-content: space-between; */
-    margin: 0 70px;
-    /* width: 200px; */
-    /* height: 200px; */
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap:10px;
+  margin: 0 70px;
+}
+.card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s, top 1s, left 1s;
+  left:0px;
+  top:0px;
+  z-index:1
+}
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+.is-flipped.shift-to-center, .shift-to-center {
+  top:var(--top);
+  left:var(--left);
+  transform: translate(-100%, -50%) rotateY(-180deg);
+  z-index:10;
+  pointer-events: none;
+  
+  }
+.shift-to-center.shift-left{
+    transform: translate(-200%, -50%) rotateY(-180deg);
+  }
+.shift-left img{
+  transform:scaleX(-1);
   }
 
-  .card {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    /* border: 1px solid black; */
-    border-radius: 30%;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    transform-origin: center right;
-    transition: transform 1s, top 1s, left 1s;
-    left:0px;
-    top:0px;
-    z-index:1
-  }
-  .card.is-flipped {
-    transform: translateX(-100%) rotateY(-180deg);
-  }
-  .is-flipped.shift-to-center, .shift-to-center {
-    top:var(--top);
-    left:var(--left);
-    transform: translate(-100%, -50%) rotateY(-180deg);
-    /* -webkit-transform: translate(-100%, -50%) rotateY(-180deg) translate3d(0,0,200px); */
-    z-index:10;
-    pointer-events: none;
-    
-    }
-    .shift-to-center.shift-left{
-      transform: translate(-200%, -50%) rotateY(-180deg);
-      /* pointer-events:none; */
-      /* -webkit-transform: translate(-200%, -50%) rotateY(-180deg) translate3d(0,0,200px);; */
-      }
-      .shift-left img{
-        transform:scaleX(-1);
-        }
-  
-  .card-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    box-shadow: 5px 5px 5px grey;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  .card-front {
-    background: lightgrey;
-    transition: 2s ease-in;
-  }
-  .card-back {
-    background: powderblue;
-    transform: rotateY(180deg);
-  }
-  img {
-    width: 100%;
-    height: 100%;
-  }
-  @media (max-width: 480px) {
-    a {
-      font-size: 1rem;
-      margin: 10px 45px;
-  }
-    button {
-      font-size: 1rem;
-    }
-    .game {
-      grid-template-columns: 100px 100px 100px;
-      justify-content: center;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      margin: 0 45px;
-    }
-    img {
-        width: 100px;
-        height: 100px;
-    }
-    .card {
-      width: 100px;
-      height: 100px;
-  }
-  }
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 5px 5px 5px lightgrey;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card-front {
+  background: rgb(213, 230, 230);
+  transition: 2s ease-in;
+}
+.card-back {
+  background: lightgrey;
+  transform: rotateY(180deg);
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 480px) {
+a {
+  font-size: 1rem;
+  margin: 10px 45px;
+} 
+button {
+  font-size: 1rem;
+}
+.game {
+  grid-template-columns: 100px 100px 100px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  margin: 0 45px;
+}
+img {
+    width: 100px;
+    height: 100px;
+}
+.card {
+  width: 100px;
+  height: 100px;
+}
+}
 
   
