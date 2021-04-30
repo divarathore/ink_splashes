@@ -39,8 +39,8 @@ button {
   transition: transform 1s, top 1s, left 1s;
   left:0px;
   top:0px;
-  z-index:1
 }
+
 .card.is-flipped {
   transform: translateX(-100%) rotateY(-180deg);
 }
@@ -50,10 +50,16 @@ button {
   transform: translate(-100%, -50%) rotateY(-180deg);
   z-index:10;
   pointer-events: none;
+
+  -webkit-transform: translate3d(-100%, -50%, 100px) rotateY(-180deg);
+  transform: translate3d(-100%, -50%, 10px) rotateY(-180deg);
   
   }
 .shift-to-center.shift-left{
     transform: translate(-200%, -50%) rotateY(-180deg);
+
+    -webkit-transform: translate3d(-200%, -50%, 10px) rotateY(-180deg);
+    transform: translate3d(-200%, -50%, 10px) rotateY(-180deg);
   }
 .shift-left img{
   transform:scaleX(-1);
